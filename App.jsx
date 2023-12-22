@@ -3,10 +3,19 @@ import React from "react";
 import Header from "./src/components/Header";
 import Shop from "./src/components/Shop";
 import { DUMMY_PRODUCTS } from "./src/dummy-products";
+import Test from "./src/components/Test";
+
 function App() {
   const [shoppingCart, setShoppingCart] = useState({
     items: [],
   });
+
+  // const [isOpenModal, setIsOpenModal] = useState(false);
+  // const openModal = (id) => {
+  //   console.log(id);
+
+  //   setIsOpenModal(true);
+  // };
 
   // function handleAddItemToCart(id) {
   //   setShoppingCart((prevShoppingCart) => {
@@ -98,11 +107,19 @@ function App() {
   }
   return (
     <>
-      <Header
+      {/* <Header
         cart={shoppingCart}
         onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
       />
-      <Shop onAddItemToCart={handleAddItemToCart} />
+      <Shop onAddItemToCart={handleAddItemToCart} /> */}
+
+      {DUMMY_PRODUCTS.map((product) => (
+        <Test
+          // openModal={openModal}
+          // isOpenModal={isOpenModal}
+          product={product}
+        />
+      ))}
     </>
   );
 }
